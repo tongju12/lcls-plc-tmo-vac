@@ -145,7 +145,7 @@ PC5K4_VWC_01(
 				i_xReset := xReset_PMPS_FFO5,
 				iq_stValve =>,
 				io_fbFFHWO :=g_FastFaultOutput5,
-                fbArbiter := g_fbArbiter2,
+                fbArbiter := g_fbArbiter3,?
 				i_nTransitionRootID := 47680
 );
 

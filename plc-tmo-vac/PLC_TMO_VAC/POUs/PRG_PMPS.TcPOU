@@ -11,6 +11,7 @@ VAR
 	ID: UDINT;
 	fb_VetoArbiter: FB_VetoArbiter;
 	ff5_ff2_link_vac: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'FF5 to FF2 Link', i_Desc := 'This is virtual FF5 fault, Please check ST4K4 downstream faulting device ', i_TypeCode := 16#9999);
+	fb_VetoArbiter2: FB_VetoArbiter;
     
     bM1K1Veto : BOOL;
 	bST3K4Veto : BOOL;
@@ -36,13 +37,15 @@ ff5_ff2_link_vac(
     i_xOK := GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut);
 	
 // Preemptive system
-fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
-	i_bVeto := bM1K1Veto);
+//fbArbiterIO(Arbiter := g_fbArbiter1, fbFFHWO := g_FastFaultOutput1,
+//	i_bVeto := bM1K1Veto);
     
-fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4],
-		HigherAuthority:=g_fbArbiter1 , 
-		LowerAuthority:= g_fbArbiter2 , FFO:= g_FastFaultOutput2);
-
+//fb_VetoArbiter(bVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST3K4],
+//		HigherAuthority:=g_fbArbiter1 , 
+	//	LowerAuthority:= g_fbArbiter2 , FFO:= g_FastFaultOutput2);
+//fb_VetoArbiter2(bVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.ST4K4], ??
+//		HigherAuthority:=g_fbArbiter2 , 
+//		LowerAuthority:= g_fbArbiter3 (*downstream of st4k4*), FFO:= g_FastFaultOutput5);
 
 //Test and diagnostic stuff
 bExist:= g_fbArbiter1.CheckRequestInPool(ID);
