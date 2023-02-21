@@ -67,263 +67,6 @@
 			</EnumInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
-			<BitSize>64</BitSize>
-			<SubItem>
-				<Name>nTran</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-				<BitSize>32</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>xAttOK</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>32</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
-				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
-				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
-				<Hide GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}"/>
-				<Hide GUID="{D6F0EA12-B425-4603-9C4B-B4FD442416C3}"/>
-				<Hide GUID="{0FF3CAED-DFFA-453E-8BDC-2F6EE7142B14}"/>
-				<Hide GUID="{AC42932A-79BD-4670-8CF2-1DDEA2EE41C7}"/>
-				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
-				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Name>
-			<BitSize>96</BitSize>
-			<SubItem>
-				<Name>Width</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-				<Comment>
-					<![CDATA[ distance between horizontal slits (x)]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>0</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Width
-            io: i
-            field: EGU mm</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>Height</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-				<Comment>
-					<![CDATA[ distance between vertical slits (y)]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>32</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Height
-            io: i
-            field: EGU mm</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>xOK</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<Comment>
-					<![CDATA[ status of aperture, false if error or in motion]]>
-				</Comment>
-				<BitSize>8</BitSize>
-				<BitOffs>64</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: OK
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Name>
-			<BitSize>1696</BitSize>
-			<SubItem>
-				<Name>nTran</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-				<Comment TxtId="">
-					<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>0</BitOffs>
-				<Default>
-					<Min>0</Min>
-					<Max>1</Max>
-					<Value>1</Value>
-				</Default>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Attenuation
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>nRate</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-				<Comment>
-					<![CDATA[ Pulse-rate ]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>32</BitOffs>
-				<Default>
-					<Value>120</Value>
-				</Default>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Rate
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>neVRange</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
-				<Comment>
-					<![CDATA[ Photon energy ranges ]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>64</BitOffs>
-				<Default>
-					<Value>4294967295</Value>
-				</Default>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: PhotonEnergy
-        io: i</Value>
-					</Property>
-					<Property>
-						<Name>plcAttribute_displaymode</Name>
-						<Value>binary</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>astAttenuators</Name>
-				<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
-				<ArrayInfo>
-					<LBound>1</LBound>
-					<Elements>16</Elements>
-				</ArrayInfo>
-				<Comment>
-					<![CDATA[ Beamline attenuators ]]>
-				</Comment>
-				<BitSize>1024</BitSize>
-				<BitOffs>96</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: AuxAttenuator
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>astApertures</Name>
-				<Type GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Type>
-				<ArrayInfo>
-					<LBound>1</LBound>
-					<Elements>4</Elements>
-				</ArrayInfo>
-				<BitSize>384</BitSize>
-				<BitOffs>1120</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>aVetoDevices</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<ArrayInfo>
-					<LBound>1</LBound>
-					<Elements>16</Elements>
-				</ArrayInfo>
-				<Comment>
-					<![CDATA[ Stopper statuses ]]>
-				</Comment>
-				<BitSize>128</BitSize>
-				<BitOffs>1504</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: AuxAttenuator
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>xValidToggle</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<Comment>
-					<![CDATA[ Toggle for watchdog]]>
-				</Comment>
-				<BitSize>8</BitSize>
-				<BitOffs>1632</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>xValid</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<Comment>
-					<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-				</Comment>
-				<BitSize>8</BitSize>
-				<BitOffs>1640</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Valid
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>nCohortInt</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
-				<Comment>
-					<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>1664</BitOffs>
-				<Properties>
-					<Property>
-						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Attenuation
-        io: i</Value>
-					</Property>
-				</Properties>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{ADE62DDD-CAE3-4FE3-BE11-F358D7D0CDD8}"/>
-				<Hide GUID="{729DFDAA-EB68-494E-B247-D86DA3C0AE5E}"/>
-				<Hide GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}"/>
-				<Hide GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}"/>
-				<Hide GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}"/>
-				<Hide GUID="{C64C88BE-2BD8-4AC6-ACD6-2A08570B4923}"/>
-				<Hide GUID="{B472A77E-9430-445F-AD24-21E649F6ACD1}"/>
-				<Hide GUID="{559ADF00-CB27-4B7D-8DEA-9DBCF390B12B}"/>
-				<Hide GUID="{E1A510FA-6CE5-40B2-9617-7C29C5B7C692}"/>
-				<Hide GUID="{3F6D5E74-4433-4A11-8ADE-14BBEED361D6}"/>
-				<Hide GUID="{6E597FBD-95E0-4E3A-8361-F15F77CF10FA}"/>
-				<Hide GUID="{5F9FBCD0-8C11-4386-87CB-253F17D55690}"/>
-				<Hide GUID="{5F9FBCD0-8C11-4386-87CB-253F17D55690}"/>
-				<Hide GUID="{F4D82764-2299-4BB7-86C4-99ED0EBA5A76}"/>
-				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
-				<Hide GUID="{1E08C18A-0551-4C52-916A-1A7A2B58BA24}"/>
-			</Hides>
-		</DataType>
-		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
 			<BitSize>48</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -791,139 +534,28 @@
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
+			<Vars VarGrpType="2">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
 			<Vars VarGrpType="1">
-				<Name>PlcTask Inputs</Name>
+				<Name>ComTask Inputs</Name>
 				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.i_stCurrentBP</Name>
-					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aVetoDevices</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
+					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
+					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.USVacOk_HI</Name>
@@ -940,32 +572,32 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
+					<Name>GVL_COM.K4S2_02_E10_stComIn</Name>
 					<Comment>
-						<![CDATA[ These variables are for IP1 EtherCat bridge 
-ETHERCAT BRIDGE COM STATUS
-EL6692 TxPDO state
-0: Other side is in OP state, >0: Error]]>
+						<![CDATA[SERIAL IO //K4S2_02_E10 (EL6021)]]>
 					</Comment>
-					<Type>BOOL</Type>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Name>GVL_COM.K4S6_01_E5_stComIn</Name>
 					<Comment>
-						<![CDATA[0: External device connected, 1: External device not connected]]>
+						<![CDATA[Serial IO]]>
 					</Comment>
-					<Type>BOOL</Type>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Name>GVL_COM.K4S2_02_E17_stComIn</Name>
 					<Comment>
-						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+						<![CDATA[Serial IO]]>
 					</Comment>
-					<Type>BOOL</Type>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
-					<Type>BOOL</Type>
+					<Name>GVL_COM.K4S2_02_E18_stComIn</Name>
+					<Comment>
+						<![CDATA[SERIAL IO]]>
+					</Comment>
+					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS</Name>
@@ -1653,15 +1285,31 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.xEcatBridge_TxPDO_state</Name>
+					<Comment>
+						<![CDATA[ These variables are for IP1 EtherCat bridge 
+ETHERCAT BRIDGE COM STATUS
+EL6692 TxPDO state
+0: Other side is in OP state, >0: Error]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.xEcatBridge_External_device_not_connected</Name>
+					<Comment>
+						<![CDATA[0: External device connected, 1: External device not connected]]>
+					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Name>GVL_IP1_ECAT.xEcatBridge_WcState</Name>
+					<Comment>
+						<![CDATA[0 = Data valid, 1 = Data invalid]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ECAT_COM_ERROR</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1679,7 +1327,11 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1859,6 +1511,25 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
+					<Comment>
+						<![CDATA[EL6692 Input ]]>
+					</Comment>
+					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS</Name>
 					<Type>REAL</Type>
 				</Var>
@@ -1870,140 +1541,31 @@ EL6692 TxPDO state
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment>
+						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
-				<Name>PlcTask Outputs</Name>
+				<Name>ComTask Outputs</Name>
 				<Var>
-					<Name>PRG_PMPS.fbArbiterIO.q_stRequestedBP</Name>
-					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aVetoDevices</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
+					<Name>GVL_COM.K4S2_02_E10_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
-					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
+					<Name>GVL_COM.K4S6_01_E5_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
+					<Name>GVL_COM.K4S2_02_E17_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+				</Var>
+				<Var>
+					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
+					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
 					<Name>GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO</Name>
@@ -2414,14 +1976,18 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO</Name>
 					<Comment>
 						<![CDATA[ Start/Stop]]>
 					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2531,140 +2097,6 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="8">
-				<Name>PlcTask Retains</Name>
-				<Var>
-					<Name>PRG_Roughing_Pumps.TM1K4_PTM_01_xExtIlkOK</Name>
-					<Type>BOOL</Type>
-					<InOut>7</InOut>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="1">
-				<Name>ComTask Inputs</Name>
-				<Var>
-					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_iPRESS_R</Name>
-					<Comment>
-						<![CDATA[ Controls and I/Os]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xHV_ON</Name>
-					<Comment>
-						<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.i_xDisc_Active</Name>
-					<Comment>
-						<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E10_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO //K4S2_02_E10 (EL6021)]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S6_01_E5_stComIn</Name>
-					<Comment>
-						<![CDATA[Serial IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E17_stComIn</Name>
-					<Comment>
-						<![CDATA[Serial IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E18_stComIn</Name>
-					<Comment>
-						<![CDATA[SERIAL IO]]>
-					</Comment>
-					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
-					<Comment>
-						<![CDATA[EL6692 Input ]]>
-					</Comment>
-					<Type>STRING(8)</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment>
-						<![CDATA[ True if any hutch turbo is not at speed or fault ]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="2">
-				<Name>ComTask Outputs</Name>
-				<Var>
-					<Name>PRG_Hutch_Beamline_Valves.LAMP_C2_GCC_01.q_xHV_DIS</Name>
-					<Comment>
-						<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E10_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S6_01_E5_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E17_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
-					<Name>GVL_COM.K4S2_02_E18_stComOut</Name>
-					<Type GUID="{A0038555-B7C2-4C7A-A937-7B19F055B54D}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition</Name>
 					<Comment>
 						<![CDATA[IO]]>
@@ -2699,6 +2131,18 @@ EL6692 TxPDO state
 					</Comment>
 					<Type>STRING(8)</Type>
 				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput5.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>ComTask Retains</Name>
@@ -2708,6 +2152,11 @@ EL6692 TxPDO state
 						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
 					</Comment>
 					<Type>UDINT</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>PMPS_GVL.BP_jsonDoc</Name>
+					<Type>SJsonValue</Type>
 					<InOut>7</InOut>
 				</Var>
 			</Vars>
@@ -2821,6 +2270,66 @@ EL6692 TxPDO state
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2023-02-21T14:05:34">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="2">
+					<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" TypeA="LCLS_Vacuum.E_VGC" InOutA="1" GuidA="{73C99071-D30E-478E-AF4C-873F5C405025}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" TypeA="LCLS_Vacuum.E_VGC" InOutA="1" GuidA="{73C99071-D30E-478E-AF4C-873F5C405025}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" TypeA="LCLS_Vacuum.E_VGC" InOutA="1" GuidA="{73C99071-D30E-478E-AF4C-873F5C405025}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open" AutoLink="true" RestoreInfo="BNotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
+						<Link VarA="PRG_PMPS.fbArbiterIO.q_stRequestedBP" TypeA="ST_BeamParams_IO" InOutA="1" GuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}" VarB="IO Outputs^RequestedBP" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="InputDst" Prefix="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance" Type="1">
+					<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" AutoLink="true" RestoreInfo="BNotFound"/>
+						<Link VarA="GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true" RestoreInfo="BNotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
+						<Link VarA="PRG_PMPS.fbArbiterIO.i_stCurrentBP" TypeA="ST_BeamParams_IO" InOutA="0" GuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}" VarB="IO Inputs^CurrentBP" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PRG_PMPS.fbArbiterIO.xTxPDO_state" TypeA="BIT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000010}" VarB="SYNC Inputs^TxPDO state" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PRG_PMPS.fbArbiterIO.xTxPDO_toggle" TypeA="BIT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000010}" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="30" OTCID="#x08502001"/>
 				<TaskPouOid Prio="15" OTCID="#x08502002"/>
@@ -2831,90 +2340,84 @@ EL6692 TxPDO state
 	<Mappings>
 		<OwnerA Name="PLC_TMO_VAC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1 (EL2202)">
-				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E10_QPC2 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E11_QPC2 (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.TV1K4_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E13 (EK1122)^IP1_ECAT (EL6692)">
 				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE" VarB="IO Inputs^IP1_HV_SAFETY_ENABLE" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" AutoLink="true"/>
 				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_PLC_NAME" VarB="IO Inputs^ENDSTATION_PLC_NAME" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd" VarB="IO Inputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_IP1_ECAT.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="ComTask Outputs^GVL_IP1_ECAT.My_PLC_NAME" VarB="IO Outputs^HUTCH_PLC_NAME" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_rPRESS" VarB="IO Inputs^IP1_MAIN_rPRESS" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xAT_VAC" VarB="IO Inputs^IP1_MAIN_xAT_VAC" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK" VarB="IO Inputs^IP1_MAIN_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_01_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_01_OPEN_LS" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_02_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_02_OPEN_LS" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_ROUGH_VRC_03_AtOpnLS" VarB="IO Inputs^IP1_ROUGH_VRC_03_OPEN_LS" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.IP1_TURBOS_ALL_AtSpd" VarB="IO Inputs^IP1_TURBOS_ALL_AtSpd" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_IP1_ECAT.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_IP1_ECAT.ROUGH1_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH1_VRC_01_OPEN_LS" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_IP1_ECAT.ROUGH2_VRC_01_AtOpnLS" VarB="IO Outputs^TMO_ROUGH2_VRC_01_OPEN_LS" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E1A (EL2202)">
 				<Link VarA="FSVTask Outputs^GVL_PMPS.g_FastFaultOutput3.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="FSVTask Outputs^GVL_PMPS.g_FastFaultOutput4.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E2_EXILK (EL1008)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.USVacOk_HI" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.USVacOk_LO" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.USVacOk_HI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.USVacOk_LO" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E6_QPC1 (EL3064)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E7_QPC1 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E8_QPC1 (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.MR1K4_SOMS_PIP_01.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST1K4_TEST_PIP_01.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST2K4_BCS_PIP_01.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST3K4_PPS_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^CX0_E9_QPC2 (EL3064)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-R20-CX0 (EK1200)^PMPS_PRE">
-				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PRG_PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.PC4K4_XTES_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_PIP_01.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.MR2K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.MR4K4_KBO_PIP_01.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB1  (EP2338-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS" VarB="Channel 6^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS" VarB="Channel 5^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO" VarB="Channel 15^Output" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_VGC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_VGC_02.i_xClsLS" VarB="Channel 6^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_VGC_02.i_xOpnLS" VarB="Channel 5^Input" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.TV1K4_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.TV1K4_VGC_02.q_xOPN_DO" VarB="Channel 15^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB2  (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.TV1K4_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.TV1K4_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EB3 (EP2624-0002)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.TV1K4_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S20_EK0  (EK1100)^K4S20-E1-FSV (EL1004)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -2929,53 +2432,53 @@ EL6692 TxPDO state
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S24_EB1 (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST1K4_TEST_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST1K4_TEST_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST1K4_TEST_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST1K4_TEST_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S24_EB2 (EP2624-0002)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST1K4_TEST_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S28_EB1 (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST2K4_BCS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST2K4_BCS_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST2K4_BCS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST2K4_BCS_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S28_EB2 (EP2624-0002)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST2K4_BCS_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S33_EB1 (EP2338-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.ST3K4_PPS_VGC_01.q_xOPN_DO" VarB="Channel 11^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S33_EB2 (EP3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FEE_Device.PC4K4_XTES_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FEE_Device.PC4K4_XTES_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_K4S33_EB3 (EP2624-0002)">
-				<Link VarA="PlcTask Outputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FEE_Device.PC4K4_XTES_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E1_MKS937B (EL3064)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E3_MKS937B (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.LI2K4_IP1_GFS_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_E5_MKS937B (EL1124)">
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xError" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xIP_ON" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xTrigger" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xError" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_xIP_ON" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940_R20_EK0 (EK1100)^R20_EK0_SIP (EL3174-0002)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA2K4_IP1_PIP_01.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_ EP1 (EP4374-0002)">
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
 				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_02.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
 				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_02.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E1_VFS (EL1004)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -2990,19 +2493,19 @@ EL6692 TxPDO state
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E5 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_01 (EK1100)^K4S2_01_E6 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.MR2K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.MR3K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E1 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E10 (EL6021)">
 				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E10_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
@@ -3053,34 +2556,34 @@ EL6692 TxPDO state
 				<Link VarA="ComTask Outputs^GVL_COM.K4S2_02_E10_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E11 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E12 (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_01.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_02.q_xReset" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E13 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E14 (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.PA1K4_IP1_PTM_03.q_xReset" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E15 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xAtSpd" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E16 (EL2794)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.IM4K4_PPM_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.LI1K4_IP1_PTM_01.q_RunDO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E17 (EL6001)">
 				<Link VarA="ComTask Inputs^GVL_COM.K4S2_02_E17_stComIn^D[0]" VarB="COM Inputs^Data In 0" AutoLink="true"/>
@@ -3179,90 +2682,90 @@ EL6692 TxPDO state
 				<Link VarA="ComTask Outputs^GVL_COM.K4S2_02_E18_stComOut^D[9]" VarB="COM Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E19 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E2 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH2_VRC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_Variables.iHV_LOOP_FIM_ON" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E20A (EL1088)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E5 (EL2624)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.IM4K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E7 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S2_DRL_02 (EK1100)^K4S2_02_E8 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA1K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_ EP1 (EP4374-0002)">
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_03.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_03.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_03.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E1 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E11 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E12 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_PumpingStation" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_PumpingStation" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E14 (EL2624)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.TM1K4_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.TM1K4_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E15 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E18 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E2 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VRC_02.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E20 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.IM5K4_PPM_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM1K4_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E21 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.MR4K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PA2K4_IP1_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E3 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.PC5K4_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.PC5K4_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.PC5K4_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.PC5K4_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E4 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.PC5K4_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.LI3K4_IP1_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.PC5K4_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E5 (EL6021)">
 				<Link VarA="ComTask Inputs^GVL_COM.K4S6_01_E5_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
@@ -3313,28 +2816,28 @@ EL6692 TxPDO state
 				<Link VarA="ComTask Outputs^GVL_COM.K4S6_01_E5_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E6 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xRemote" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xAtSpd" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xFaultNC" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.i_xRemote" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xAtSpd" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E7 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_PumpingStation" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xRemote" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_RunDO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_PumpingStation" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.LI3K4_IP1_OUT_PTM_01.q_xRemote" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_RunDO" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E8 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xAtSpd" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xRemote" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xRemote" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xAtSpd" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.i_xRemote" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xFaultNC" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Pumps.TM1K4_PTM_01.i_xRemote" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S6_DRL_01 (EK1100)^K4S6_01_E9 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xRemote" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_PumpingStation" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_xRemote" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_RunDO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.IM5K4_PPM_PTM_01.q_xRemote" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_PumpingStation" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Pumps.TM1K4_PTM_01.q_xRemote" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E1 (EL1004)">
 				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -3349,128 +2852,128 @@ EL6692 TxPDO state
 				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E5 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xClsLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_01 (EK1100)^K4S8_01_E6 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.MR4K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.MR5K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E1 (EL1004)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xClsLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.i_xOpnLS" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E2 (EL2004)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TM2K4_KBO_VWC_01.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E3 (EL2624)">
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E4 (EL3174)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GPI_01.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E6A (EL1084)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.PF2K4_WFS_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_K4S8_DRL_02 (EK1100)^K4S8_02_E8 (EL1124)">
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TM2K4_KBO_GCC_01.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^TMO_WALL_WEST_EP01 (EP4374-0002)">
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
 				<Link VarA="ComTask Outputs^GVL_Hutch_Valves.TMO_ROUGH1_VFV_01.q_iRawPosition" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH1_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Hutch_Gauges.TMO_ROUGH2_GPI_01.i_iPRESS_R" VarB="AI Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIPC^PLC_TMO_VAC^PLC_TMO_VAC Instance">
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" VarB="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" VarB="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" VarB="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open" VarB="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open" VarB="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" VarB="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xCLS_SW" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOPN_SW" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideMode" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xOverrideOpen" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xPress_OK" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveClosed" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="ComTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xCLS_SW" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOPN_SW" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideMode" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xOverrideOpen" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xPress_OK" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVAC_FAULT_Reset" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveClosed" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.i_xVetoValveOpenDO" VarB="ComTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xCLS_SW" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xCLS_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOPN_SW" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOPN_SW" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideMode" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideMode" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xOverrideOpen" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xOverrideOpen" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xPress_OK" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xPRESS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVAC_FAULT_Reset" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVAC_FAULT_Reset" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveClosed" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveClosed" AutoLink="true"/>
+				<Link VarA="FSVTask Inputs^GVL_FS_Devices.TV1K4_VFS_1.i_xVetoValveOpenDO" VarB="ComTask Outputs^GVL_FS_Devices.TV1K4_VFS_Interface.q_xVetoValveOpenDO" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_eVFS_State" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xMPS_OK" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xTrigger" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Closed" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR3K4_KBO_VFS_1.q_xVFS_Open" VarB="ComTask Inputs^GVL_FS_Devices.MR3K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_eVFS_State" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_eVFS_State" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xMPS_OK" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xTrigger" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xTrigger" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVAC_FAULT_OK" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Closed" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.MR4K4_KBO_VFS_1.q_xVFS_Open" VarB="ComTask Inputs^GVL_FS_Devices.MR4K4_KBO_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_eVFS_State" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_eVFS_State" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xMPS_OK" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xMPS_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xTrigger" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xTrigger" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVAC_FAULT_OK" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVAC_FAULT_OK" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Closed" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Closed" AutoLink="true"/>
+				<Link VarA="FSVTask Outputs^GVL_FS_Devices.TV1K4_VFS_1.q_xVFS_Open" VarB="ComTask Inputs^GVL_FS_Devices.TV1K4_VFS_Interface.i_xVFS_Open" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
