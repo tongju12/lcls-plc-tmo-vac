@@ -416,7 +416,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E83AD1CB-90A8-4FD4-BB7F-C05EA50F2299}" Name="PLC_TMO_VAC" PrjFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.plcproj" TmcFilePath="..\..\PLC_TMO_VAC\PLC_TMO_VAC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{02A8F4B5-5682-CC1A-E302-0240C7273DC2}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="1" TmcPath="PLC_TMO_VAC\PLC_TMO_VAC.tmc" TmcHash="{CAB06A3C-F477-3B0D-8480-A92582BCB437}">
 			<Name>PLC_TMO_VAC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -926,6 +926,14 @@ EL6695 TxPDO state
 				<Var>
 					<Name>GVL_DREAM_ECAT.bDreamEcatBridge_WcState</Name>
 					<Comment><![CDATA[0 = Data valid, 1 = Data invalid]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_MR5K4_VWC</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_TM2K4_VWC</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1708,14 +1716,6 @@ EL6692 TxPDO state
 					<Name>GVL_IP1_ECAT.IP1_MAIN_GAUGE.i_xPRESS_OK</Name>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_MR5K4_VWC</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bCLOSE_TMO_TM2K4_VWC</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="1" AreaNo="17">
 				<Name>PlcTask Outputs</Name>
@@ -1725,6 +1725,23 @@ EL6692 TxPDO state
 				</Var>
 				<Var>
 					<Name>PRG_Roughing_Pumps.dummy_FFFO.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_CLOSED_LS</Name>
+					<Comment><![CDATA[Window valve interface]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_CLOSED_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_OPEN_LS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_OPEN_LS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2233,10 +2250,6 @@ EL6692 TxPDO state
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2249,20 +2262,7 @@ EL6692 TxPDO state
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_CLOSED_LS</Name>
-					<Comment><![CDATA[Window valve interface]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_CLOSED_LS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bTMO_MR5K4_VWC_OPEN_LS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_DREAM_ECAT.bTMO_TM2K4_VWC_OPEN_LS</Name>
+					<Name>GVL_Variables.iHV_LOOP_FIM_ON</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2325,10 +2325,6 @@ EL6692 TxPDO state
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
 				<Var>
-					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>GVL_COM.K4S2_02_E18_stComIn</Name>
 					<Comment><![CDATA[SERIAL IO]]></Comment>
 					<Type GUID="{6B7CC85E-DFA6-4D9C-916D-9ABFA2562720}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
@@ -2339,14 +2335,18 @@ EL6692 TxPDO state
 					<Type>STRING(8)</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
-					<Comment><![CDATA[ True if any hutch turbo is not at speed or fault ]]></Comment>
+					<Name>GVL_IP1_ECAT.IP1_HV_SAFETY_ENABLE</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_IP1_ECAT.IP1_PLC_NAME</Name>
 					<Comment><![CDATA[EL6692 Input]]></Comment>
 					<Type>STRING(8)</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Variables.xLAMP_PTM_NOK</Name>
+					<Comment><![CDATA[ True if any hutch turbo is not at speed or fault ]]></Comment>
+					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">

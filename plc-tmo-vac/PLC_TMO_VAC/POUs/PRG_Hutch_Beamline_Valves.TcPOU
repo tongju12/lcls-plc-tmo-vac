@@ -121,6 +121,14 @@ MR3K4_KBO_VWC_01(
                 i_sDevName := 'MR3K4-KBO-VWC-01'
 
 );
+// setup a psuedo gauge to select li2k4 instead of ip1 when pipe is in to replace ip1 08-21-25
+IF xPipe_replace_IP1 THEN
+    Psuedo_IP1_Gauge := LI2K4_IP1_GFS_02.IG;
+    Psuedo_IP1_Gauge.sPath := 'LI2K4_IP1_GFS_02';
+ELSE
+    Psuedo_IP1_Gauge := IP1_MAIN_GAUGE.VG;
+    Psuedo_IP1_Gauge.sPath := 'IP1_MAIN_GAUGE';
+END_IF
 
 LI3K4_IP1_VWC_01(
                 i_stUSG := IP1_MAIN_GAUGE.VG,
@@ -207,7 +215,7 @@ TMO_ROUGH1_VFV_01(i_xExtIlkOK := FALSE);
 TMO_ROUGH1_VFV_02(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed() AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
 TMO_ROUGH1_VFV_03(i_xExtIlkOK := TMO_ROUGH1_VRC_02.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed() AND PC5K4_VWC_01.M_IsClosed());
 //TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed());
-IF IP1_ECAT_COM_ERROR THEN //If IP1 and Tmo beamline detect communication error,assuming IP1_ROUGH_VRC_02 open, tend to vent entire end station
+IF (IP1_ECAT_COM_ERROR OR xPipe_replace_IP1) THEN //If IP1 and Tmo beamline detect communication error,assuming IP1_ROUGH_VRC_02 open, tend to vent entire end station //add pipe in replacing ip1 8-21-25
     TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
 ELSIF (IP1_ROUGH_VRC_02_AtOpnLS )THEN // vent entire end station
      TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
