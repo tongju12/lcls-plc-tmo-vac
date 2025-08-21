@@ -131,7 +131,7 @@ ELSE
 END_IF
 
 LI3K4_IP1_VWC_01(
-                i_stUSG := IP1_MAIN_GAUGE.VG,
+                i_stUSG := Psuedo_IP1_Gauge,
                 i_stDSG:= IM5K4_PPM_GCC_01.IG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
