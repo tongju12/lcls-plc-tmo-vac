@@ -67,7 +67,7 @@ xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunn
                ton_PA1K4_IP1_PTM_03_notRunning.Q OR ton_IM4K4_PPM_PTM_01_notRunning.Q OR
                ton_LI1K4_IP1_PTM_01_notRunning.Q OR ton_LI3K4_IP1_OUT_PTM_01_notRunning.Q OR
                 ton_TM1K4_PTM_01_notRunning.Q OR ton_IM5K4_PPM_PTM_01_notRunning.Q
-                OR NOT IP1_TURBOS_ALL_AtSpd;
+                OR NOT (IP1_TURBOS_ALL_AtSpd OR xPipe_replace_IP1); // add pipe to replace ip1 on 8-21-25
 
 (* check beamline valve OPEN permit *)
 (*xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
@@ -129,7 +129,7 @@ ELSE
     Psuedo_IP1_Gauge := IP1_MAIN_GAUGE.VG;
     Psuedo_IP1_Gauge.sPath := 'IP1_MAIN_GAUGE';
 END_IF
-
+//add pipe in to replace ip1-08-21-25
 LI3K4_IP1_VWC_01(
                 i_stUSG := Psuedo_IP1_Gauge,
                 i_stDSG:= IM5K4_PPM_GCC_01.IG,
