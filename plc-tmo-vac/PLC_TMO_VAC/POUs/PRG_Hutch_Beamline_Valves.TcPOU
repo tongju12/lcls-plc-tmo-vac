@@ -67,7 +67,7 @@ xTurboFault := ton_PA1K4_IP1_PTM_01_notRunning.Q OR ton_PA1K4_IP1_PTM_02_notRunn
                ton_PA1K4_IP1_PTM_03_notRunning.Q OR ton_IM4K4_PPM_PTM_01_notRunning.Q OR
                ton_LI1K4_IP1_PTM_01_notRunning.Q OR ton_LI3K4_IP1_OUT_PTM_01_notRunning.Q OR
                 ton_TM1K4_PTM_01_notRunning.Q OR ton_IM5K4_PPM_PTM_01_notRunning.Q
-                OR NOT IP1_TURBOS_ALL_AtSpd;
+                OR NOT (IP1_TURBOS_ALL_AtSpd OR xPipe_replace_IP1); // add pipe to replace ip1 on 8-21-25
 
 (* check beamline valve OPEN permit *)
 (*xValves_are_OPN_OK :=  MR2K4_KBO_VWC_01.iq_stValve.xOPN_OK AND MR3K4_KBO_VWC_01.iq_stValve.xOPN_OK AND
@@ -121,9 +121,17 @@ MR3K4_KBO_VWC_01(
                 i_sDevName := 'MR3K4-KBO-VWC-01'
 
 );
-
+// setup a psuedo gauge to select li2k4 instead of ip1 when pipe is in to replace ip1 08-21-25
+IF xPipe_replace_IP1 THEN
+    Psuedo_IP1_Gauge := LI2K4_IP1_GFS_02.IG;
+    Psuedo_IP1_Gauge.sPath := 'LI2K4_IP1_GFS_02';
+ELSE
+    Psuedo_IP1_Gauge := IP1_MAIN_GAUGE.VG;
+    Psuedo_IP1_Gauge.sPath := 'IP1_MAIN_GAUGE';
+END_IF
+//add pipe in to replace ip1-08-21-25
 LI3K4_IP1_VWC_01(
-                i_stUSG := IP1_MAIN_GAUGE.VG,
+                i_stUSG := Psuedo_IP1_Gauge,
                 i_stDSG:= IM5K4_PPM_GCC_01.IG,
                 i_xDis_DPIlk := FALSE,
                 i_xEPS_OK := TRUE,
@@ -207,7 +215,7 @@ TMO_ROUGH1_VFV_01(i_xExtIlkOK := FALSE);
 TMO_ROUGH1_VFV_02(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed() AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
 TMO_ROUGH1_VFV_03(i_xExtIlkOK := TMO_ROUGH1_VRC_02.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed() AND PC5K4_VWC_01.M_IsClosed());
 //TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed());
-IF IP1_ECAT_COM_ERROR THEN //If IP1 and Tmo beamline detect communication error,assuming IP1_ROUGH_VRC_02 open, tend to vent entire end station
+IF (IP1_ECAT_COM_ERROR OR xPipe_replace_IP1) THEN //If IP1 and Tmo beamline detect communication error,assuming IP1_ROUGH_VRC_02 open, tend to vent entire end station //add pipe in replacing ip1 8-21-25
     TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
 ELSIF (IP1_ROUGH_VRC_02_AtOpnLS )THEN // vent entire end station
      TMO_ROUGH2_VFV_01(i_xExtIlkOK := TMO_ROUGH1_VRC_01.M_IsClosed() AND TMO_ROUGH2_VRC_01.M_IsClosed()AND MR3K4_KBO_VWC_01.M_IsClosed() AND LI3K4_IP1_VWC_01.M_IsClosed());
